@@ -39,6 +39,7 @@ function App() {
           </svg>
           <h2>putos</h2>
           <p>hola genteeeeeeeeeee</p>
+          <p>WENA LU, COMMITS SON DE LA VIL PERRA.</p>
           <ul>
             <li>
               <a href="https://vite.dev/" target="_blank">
