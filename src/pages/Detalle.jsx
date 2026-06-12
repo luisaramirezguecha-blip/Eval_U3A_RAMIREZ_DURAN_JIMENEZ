@@ -27,7 +27,7 @@ const Detalle = () => {
           setError('No se encontró información para esta licitación.')
           return
         }
-
+ 
         setLicitacion(datos.Listado[0])
       } catch (err) {
         console.error(err)

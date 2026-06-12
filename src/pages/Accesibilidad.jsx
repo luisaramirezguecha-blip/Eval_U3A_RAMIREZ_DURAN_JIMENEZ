@@ -27,5 +27,5 @@ export const AccesibilidadProvider = ({ children }) => {
     </AccesibilidadContext.Provider>
   );
 };
-
+ 
 export const useAccesibilidad = () => useContext(AccesibilidadContext);
