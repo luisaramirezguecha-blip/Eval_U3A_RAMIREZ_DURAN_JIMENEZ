@@ -33,7 +33,6 @@ const Navbar = () => {
               <li><Link to="/" className="text-[14px] font-medium text-[#4A4845] px-3 py-2 rounded-md hover:bg-[#EBF1FB] hover:text-[#0A3D91] transition-colors no-underline block">Inicio</Link></li>
               <li><Link to="/licitaciones" className="text-[14px] font-medium text-[#4A4845] px-3 py-2 rounded-md hover:bg-[#EBF1FB] hover:text-[#0A3D91] transition-colors no-underline block">Licitaciones</Link></li>
               <li><Link to="/proveedores" className="text-[14px] font-medium text-[#4A4845] px-3 py-2 rounded-md hover:bg-[#EBF1FB] hover:text-[#0A3D91] transition-colors no-underline block">Proveedores</Link></li>
-              <li><Link to="/detalle" className="text-[14px] font-medium text-[#4A4845] px-3 py-2 rounded-md hover:bg-[#EBF1FB] hover:text-[#0A3D91] transition-colors no-underline block">Detalle</Link></li>
               <li><a href="#ayuda" className="text-[14px] font-medium text-[#4A4845] px-3 py-2 rounded-md hover:bg-[#EBF1FB] hover:text-[#0A3D91] transition-colors no-underline block">Ayuda</a></li>
             </ul>
 
