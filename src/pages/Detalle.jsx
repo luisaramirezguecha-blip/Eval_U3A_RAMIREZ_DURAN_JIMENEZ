@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { limpiarTexto } from '../components/LicitacionesPorFechaYEstado'
 
-const TICKET = "83A7E106-C540-4293-ACCB-0B053A65D4B3"
+const TICKET = "AC3A098B-4CD0-41AF-81A5-41284248419B"
 
 const Detalle = () => {
   const { codigo } = useParams()
@@ -38,8 +38,8 @@ const Detalle = () => {
       }
     }
 
-    if (codigo) fetchDetalle()
-  }, [codigo])
+    if (codigoDecodificado) fetchDetalle()
+  }, [codigoDecodificado])
 
   return (
     <>
@@ -84,7 +84,8 @@ const Detalle = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
                   { label: 'Código Externo', value: licitacion.CodigoExterno },
-                  { label: 'Organismo', value: limpiarTexto(licitacion.Nombre) },
+                  { label: 'Organismo', value: limpiarTexto(licitacion.Comprador?.NombreOrganismo) },
+                  { label: 'RUT Organismo', value: licitacion.Comprador?.RutUnidad },
                   { label: 'Fecha de Cierre', value: licitacion.FechaCierre?.substring(0, 10) },
                   { label: 'Fecha de Publicación', value: licitacion.FechaPublicacion?.substring(0, 10) },
                   { label: 'Tipo', value: licitacion.Tipo },
@@ -106,18 +107,31 @@ const Detalle = () => {
                 </div>
               )}
 
-            
-            <a href={`https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?qs=${licitacion.CodigoExterno}`}
+              {/* Botón buscar proveedor por RUT del organismo */}
+              {licitacion.Comprador?.RutUnidad && (
+                <button
+                  onClick={() => navigate(`/proveedores?rut=${licitacion.Comprador.RutUnidad}`)}
+                  className="inline-flex items-center gap-2 bg-white border border-[#0A3D91] text-[#0A3D91] text-[14px] font-semibold px-5 py-2.5 rounded-lg hover:bg-[#EBF1FB] transition-colors self-start cursor-pointer"
+                  aria-label="Buscar proveedor de esta licitación"
+                >
+                  Buscar proveedor
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="w-4 h-4">
+                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                  </svg>
+                </button>
+              )}
+
+              <a href={`https://www.mercadopublico.cl/Procurement/Modules/RFB/DetailsAcquisition.aspx?qs=${licitacion.CodigoExterno}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#0A3D91] text-white text-[14px] font-semibold px-5 py-2.5 rounded-lg hover:bg-[#1756C8] transition-colors no-underline self-start"
                 aria-label="Ver licitación completa en Mercado Público"
-                >
+              >
                 Ver en Mercado Público
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="w-4 h-4">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
-            </a>
+              </a>
 
             </div>
           )}

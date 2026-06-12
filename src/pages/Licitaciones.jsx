@@ -34,10 +34,10 @@ export default function Licitaciones() {
 
   return (
     <>
-      {/* ── Navbar ─────────────────────────────────────────────────────── */}
+      {/*Navbar*/}
       <Navbar />
 
-      {/* ── Skip link ──────────────────────────────────────────────────── */}
+      {/*Skip link*/}
       <a
         href="#contenido-principal"
         className="absolute left-[-9999px] top-auto focus:left-4 focus:top-4 focus:bg-white focus:text-[#1a3a5c] focus:p-2 focus:z-[200] focus:font-bold focus:shadow-md"
@@ -45,7 +45,7 @@ export default function Licitaciones() {
         Ir al contenido principal
       </a>
 
-      {/* ── Main ───────────────────────────────────────────────────────── */}
+      {/*Main*/}
       <main id="contenido-principal" className="py-10 min-h-[70vh] bg-[#f8fafc] flex-1">
         <div className="max-w-[1200px] mx-auto px-4">
           <h1 id="titulo-pagina" className="text-[1.6rem] font-bold text-[#1a3a5c] mb-5">Buscar licitación</h1>
