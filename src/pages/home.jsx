@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <main id="contenido-principal">
+      <main id="contenido-principal" className='flex-1'>
         <Hero />
         <ComoFunciona />
         <LicitacionesDestacadas />

@@ -44,7 +44,7 @@ export default function Licitaciones() {
       </a>
 
       {/* ── Main ───────────────────────────────────────────────────────── */}
-      <main id="contenido-principal" className="py-10 min-h-[70vh] bg-[#f8fafc]">
+      <main id="contenido-principal" className="py-10 min-h-[70vh] bg-[#f8fafc] flex-1">
         <div className="max-w-[1200px] mx-auto px-4">
           <h1 id="titulo-pagina" className="text-[1.6rem] font-bold text-[#1a3a5c] mb-5">Buscar licitación</h1>
 

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const licitaciones = [
   { title: 'Construcción de ciclovía — Santiago', org: 'Municipalidad de Santiago', monto: '$ 95.000.000', plazo: 'Cierra en 8 días', estado: 'Abierta' },
@@ -71,12 +72,12 @@ const LicitacionesDestacadas = () => {
         </div>
 
         <div className="text-center mt-10">
-          <a href="#" className="inline-flex items-center gap-2 bg-[#0A3D91] text-white text-[14px] font-semibold px-5 py-2.5 rounded-lg hover:bg-[#1756C8] transition-colors no-underline">
+          <Link to="/licitaciones" className="inline-flex items-center gap-2 bg-[#0A3D91] text-white text-[14px] font-semibold px-5 py-2.5 rounded-lg hover:bg-[#1756C8] transition-colors no-underline">
             Ver todas las licitaciones
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="w-4 h-4">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

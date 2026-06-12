@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../assets/logo-chilecompra-navbar.png'
 
 const Navbar = () => {
@@ -29,13 +30,11 @@ const Navbar = () => {
 
             {/* Links desktop */}
             <ul className={`md:flex items-center gap-1 list-none ${menuOpen ? 'flex flex-col absolute top-full left-0 right-0 bg-white border-b border-[#0A3D91]/10 p-4 z-50' : 'hidden'}`}>
-              {['Inicio', 'Licitaciones', 'Proveedores', 'Detalle', 'Ayuda'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-[14px] font-medium text-[#4A4845] px-3 py-2 rounded-md hover:bg-[#EBF1FB] hover:text-[#0A3D91] transition-colors no-underline block">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li><Link to="/" className="text-[14px] font-medium text-[#4A4845] px-3 py-2 rounded-md hover:bg-[#EBF1FB] hover:text-[#0A3D91] transition-colors no-underline block">Inicio</Link></li>
+              <li><Link to="/licitaciones" className="text-[14px] font-medium text-[#4A4845] px-3 py-2 rounded-md hover:bg-[#EBF1FB] hover:text-[#0A3D91] transition-colors no-underline block">Licitaciones</Link></li>
+              <li><Link to="/proveedores" className="text-[14px] font-medium text-[#4A4845] px-3 py-2 rounded-md hover:bg-[#EBF1FB] hover:text-[#0A3D91] transition-colors no-underline block">Proveedores</Link></li>
+              <li><Link to="/detalle" className="text-[14px] font-medium text-[#4A4845] px-3 py-2 rounded-md hover:bg-[#EBF1FB] hover:text-[#0A3D91] transition-colors no-underline block">Detalle</Link></li>
+              <li><a href="#ayuda" className="text-[14px] font-medium text-[#4A4845] px-3 py-2 rounded-md hover:bg-[#EBF1FB] hover:text-[#0A3D91] transition-colors no-underline block">Ayuda</a></li>
             </ul>
 
             {/* ClaveUnica */}
