@@ -148,8 +148,10 @@ export default function Licitaciones() {
                     </td>
                     <td className="py-[0.7rem] px-4 border-b border-[#f1f5f9] align-middle">{fila.codigoExterno}</td>
                     <td className="py-[0.7rem] px-4 border-b border-[#f1f5f9] align-middle">{fila.nombre}</td>
-                    <td className="py-[0.7rem] px-4 border-b border-[#f1f5f9] align-middle">
-                      <span className="bg-[#e8f0fe] py-1 px-2 rounded text-[0.8rem] text-[#1a3a5c] font-medium">Cód: {fila.codigoEstado}</span>
+                    <td className="py-[0.7rem] px-4 border-b border-[#f1f5f9] align-middle text-center">
+                      <span className="bg-[#e8f0fe] py-1 px-3 rounded text-[0.8rem] text-[#1a3a5c] font-medium whitespace-nowrap inline-block">
+                      Cód: {fila.codigoEstado}
+                      </span>
                     </td>
                   </tr>
                 ))}
