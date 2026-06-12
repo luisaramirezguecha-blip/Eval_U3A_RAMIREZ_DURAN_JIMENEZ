@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/home'
 import Licitaciones from './pages/Licitaciones'
 import Detalle from './pages/Detalle'
-import Proveedores from './pages/Proveedores'
+import Proveedores from './pages/proveedores'
 
 function App() {
   return (
