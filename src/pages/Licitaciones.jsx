@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useLicitacionesPorFechaYEstado } from '../components/LicitacionesPorFechaYEstado';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -6,6 +7,7 @@ import Footer from '../components/Footer';
 // ─── Componente ──────────────────────────────────────────────────────────────
 
 export default function Licitaciones() {
+  const navigate = useNavigate();
   const {
     fecha,        setFecha,
     estado,       setEstado,
@@ -141,20 +143,27 @@ export default function Licitaciones() {
                 </tr>
               </thead>
               <tbody id="cuerpoResultados">
-                {filas.map((fila, i) => (
-                  <tr key={i} className="hover:bg-slate-50 transition-colors">
-                    <td className="py-[0.7rem] px-4 border-b border-[#f1f5f9] align-middle">
-                      <span className="font-semibold text-[#1a3a5c]">{fila.fecha}</span>
-                    </td>
-                    <td className="py-[0.7rem] px-4 border-b border-[#f1f5f9] align-middle">{fila.codigoExterno}</td>
-                    <td className="py-[0.7rem] px-4 border-b border-[#f1f5f9] align-middle">{fila.nombre}</td>
-                    <td className="py-[0.7rem] px-4 border-b border-[#f1f5f9] align-middle text-center">
-                      <span className="bg-[#e8f0fe] py-1 px-3 rounded text-[0.8rem] text-[#1a3a5c] font-medium whitespace-nowrap inline-block">
-                      Cód: {fila.codigoEstado}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
+                  {filas.map((fila, i) => (
+                    <tr
+                      key={i}
+                      className="hover:bg-slate-50 transition-colors cursor-pointer"
+                      onClick={() => navigate(`/detalle/${encodeURIComponent(fila.codigoExterno)}`)}
+                      tabIndex={0}
+                      aria-label={`Ver detalle de licitación ${fila.nombre}`}
+                      onKeyDown={(e) => e.key === 'Enter' && navigate(`/detalle/${encodeURIComponent(fila.codigoExterno)}`)}
+                    >
+                      <td className="py-[0.7rem] px-4 border-b border-[#f1f5f9] align-middle">
+                        <span className="font-semibold text-[#1a3a5c]">{fila.fecha}</span>
+                      </td>
+                      <td className="py-[0.7rem] px-4 border-b border-[#f1f5f9] align-middle">{fila.codigoExterno}</td>
+                      <td className="py-[0.7rem] px-4 border-b border-[#f1f5f9] align-middle">{fila.nombre}</td>
+                      <td className="py-[0.7rem] px-4 border-b border-[#f1f5f9] align-middle text-center">
+                        <span className="bg-[#e8f0fe] py-1 px-3 rounded text-[0.8rem] text-[#1a3a5c] font-medium whitespace-nowrap inline-block">
+                          Cód: {fila.codigoEstado}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
               </tbody>
             </table>
           </section>
