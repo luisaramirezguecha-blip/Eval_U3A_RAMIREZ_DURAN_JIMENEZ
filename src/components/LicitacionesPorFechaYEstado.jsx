@@ -40,7 +40,7 @@ export function getFechaHoy() {
 
 // ─── Hook principal ─────────────────────────────────────────────────────────
 
-export function useLicitaciones() {
+export function useLicitacionesPorFechaYEstado() {
   const [fecha, setFecha]         = useState(getFechaHoy);
   const [estado, setEstado]       = useState("activas");
   const [filas, setFilas]         = useState([]);

@@ -1,5 +1,7 @@
 import { useEffect } from "react";
-import { useLicitaciones } from "./hooks/useLicitaciones";
+import { useLicitacionesPorFechaYEstado } from '../components/LicitacionesPorFechaYEstado';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 // ─── Componente ──────────────────────────────────────────────────────────────
 
@@ -17,10 +19,11 @@ export default function Licitaciones() {
     iniciarBusqueda,
     cargarSiguiente,
     cargarAnterior,
-  } = useLicitaciones();
+  } = useLicitacionesPorFechaYEstado();
 
   useEffect(() => {
     iniciarBusqueda();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleKeyDown = (e) => {
@@ -29,55 +32,8 @@ export default function Licitaciones() {
 
   return (
     <>
-      {/* ── Topbar ─────────────────────────────────────────────────────── */}
-      <div className="bg-[#1a3a5c] text-white/85 text-[0.8rem] py-[6px]" role="banner" aria-label="Barra de utilidades">
-        <div className="flex justify-between items-center max-w-[1200px] mx-auto px-4">
-          <span>Plataforma de información de licitaciones públicas · Chile</span>
-          <nav className="flex gap-4" aria-label="Enlaces de utilidad">
-            <a href="accesibilidad.html" className="text-white/70 no-underline text-[0.8rem] hover:text-white transition-colors">Accesibilidad</a>
-            <a href="#contraste" className="text-white/70 no-underline text-[0.8rem] hover:text-white transition-colors" aria-label="Cambiar contraste">Contraste</a>
-            <a href="#idioma" className="text-white/70 no-underline text-[0.8rem] hover:text-white transition-colors">Idioma</a>
-          </nav>
-        </div>
-      </div>
-
       {/* ── Navbar ─────────────────────────────────────────────────────── */}
-      <header className="bg-white border-b border-[#e5e7eb] py-3 sticky top-0 z-[100] shadow-[0_1px_4px_rgba(0,0,0,0.07)]" id="navbar">
-        <div className="flex items-center justify-between max-w-[1200px] mx-auto px-4">
-          <a href="../index.html" aria-label="LicitaSeguro — Inicio">
-            <img src="../img/logo-chilecompra-navbar.png" alt="navbar-logo" height="45" />
-          </a>
-
-          <ul className="flex gap-6 list-none m-0 p-0" role="list">
-            {[
-              { href: "../index.html",       label: "Inicio"       },
-              { href: "./licitaciones.html", label: "Licitaciones" },
-              { href: "./proveedores.html",  label: "Proveedores"  },
-              { href: "./detalle.html",      label: "Detalle"      },
-              { href: "#ayuda",              label: "Ayuda"        },
-            ].map(({ href, label }) => (
-              <li key={label}>
-                <a href={href} className="text-[#1a3a5c] no-underline font-medium text-[0.95rem] hover:opacity-80 transition-opacity">{label}</a>
-              </li>
-            ))}
-          </ul>
-
-          <a
-            href="#claveunica"
-            className="flex items-center gap-[0.4rem] bg-[#1a3a5c] text-white border-none rounded-md px-4 py-[0.45rem] font-semibold text-[0.9rem] cursor-pointer no-underline hover:bg-[#122a44] transition-colors"
-            tabIndex={0}
-            role="button"
-            aria-label="Ingresar con ClaveÚnica — autenticación del Estado de Chile"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"
-              strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" width="18" height="18">
-              <path d="M12 17v4m-4 0h8M5 12V6a7 7 0 0114 0v6" />
-              <rect x="3" y="12" width="18" height="8" rx="2" />
-            </svg>
-            ClaveÚnica
-          </a>
-        </div>
-      </header>
+      <Navbar />
 
       {/* ── Skip link ──────────────────────────────────────────────────── */}
       <a
@@ -242,76 +198,7 @@ export default function Licitaciones() {
       </main>
 
       {/* ── Footer ─────────────────────────────────────────────────────── */}
-      <footer id="ayuda" role="contentinfo" className="bg-[#1a3a5c] text-white/85 pt-10 pb-4 mt-12">
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(170px,1fr))] gap-8 max-w-[1200px] mx-auto px-4">
-          <div>
-            <a href="index.html" aria-label="LicitaSeguro inicio">
-              <img src="../img/footer-img.png" alt="footer-icono" height="40" />
-            </a>
-            <p className="text-[0.85rem] text-white/65 mt-3 leading-relaxed">
-              Información transparente y accesible sobre licitaciones públicas de Chile,
-              pensada para la ciudadanía. Basado en datos de Mercado Público y ChileCompra.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="text-white font-bold text-[0.95rem] mb-3">Plataforma</h4>
-            <ul className="list-none p-0 m-0">
-              {[
-                { href: "licitaciones.html", label: "Licitaciones"  },
-                { href: "detalle.html",      label: "Ver detalles"  },
-                { href: "proveedores.html",  label: "Proveedores"   },
-              ].map(({ href, label }) => (
-                <li key={label} className="mb-[0.4rem]">
-                  <a href={href} className="text-white/65 no-underline text-[0.88rem] hover:text-white transition-colors">{label}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white font-bold text-[0.95rem] mb-3">Ayuda</h4>
-            <ul className="list-none p-0 m-0">
-              {[
-                { href: "#faq",      label: "Preguntas frecuentes" },
-                { href: "#contacto", label: "Contacto"             },
-                { href: "#glosario", label: "Glosario"             },
-              ].map(({ href, label }) => (
-                <li key={label} className="mb-[0.4rem]">
-                  <a href={href} className="text-white/65 no-underline text-[0.88rem] hover:text-white transition-colors">{label}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white font-bold text-[0.95rem] mb-3">Accesibilidad</h4>
-            <ul className="list-none p-0 m-0">
-              {[
-                { href: "accesibilidad.html", label: "Declaración WCAG 2.1"          },
-                { href: "#transparencia",     label: "Transparencia"                 },
-                { href: "#",                  label: "Ley N° 20.285", aria: "Ley de Transparencia N° 20.285" },
-              ].map(({ href, label, aria }) => (
-                <li key={label} className="mb-[0.4rem]">
-                  <a href={href} className="text-white/65 no-underline text-[0.88rem] hover:text-white transition-colors" aria-label={aria}>{label}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="max-w-[1200px] mx-auto mt-6 pt-4 px-4 border-t border-white/15 text-[0.82rem] text-white/50">
-          <span>
-            Datos provistos por{" "}
-            <a href="https://api.mercadopublico.cl" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">
-              Mercado Público
-            </a>{" "}y{" "}
-            <a href="https://datos-abiertos.chilecompra.cl" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">
-              ChileCompra
-            </a>
-          </span>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
