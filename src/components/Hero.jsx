@@ -12,7 +12,7 @@ const Hero = () => {
   ]
 
   return (
-    <section className="bg-white py-20 border-b border-[#0A3D91]/10 overflow-hidden relative">
+    <section aria-label='Sección principal de búsqueda' className="bg-white py-20 border-b border-[#0A3D91]/10 overflow-hidden relative">
       {/* Circulo decorativo */}
       <div className="absolute -top-20 -right-24 w-[500px] h-[500px] rounded-full bg-[#EBF1FB] z-0" />
 
@@ -44,6 +44,8 @@ const Hero = () => {
                 </svg>
               </div>
               <input
+                id='buscador-licitraciones'
+                aria-label='Buscador de licitaciones'
                 type="search"
                 value={query}
                 onChange={e => setQuery(e.target.value)}
@@ -61,6 +63,7 @@ const Hero = () => {
                 <button
                   key={tag}
                   onClick={() => setQuery(tag)}
+                  aria-label={`Buscar por categoría: ${tag}`}
                   className="text-[13px] px-3 py-1.5 border border-[#0A3D91]/10 rounded-full bg-white text-[#4A4845] hover:bg-[#EBF1FB] hover:border-[#0A3D91] hover:text-[#0A3D91] transition-colors cursor-pointer"
                 >
                   {tag}

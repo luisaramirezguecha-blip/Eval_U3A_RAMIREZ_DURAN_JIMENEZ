@@ -28,11 +28,11 @@ const LicitacionesDestacadas = () => {
   })
 
   return (
-    <section className="py-20 bg-white">
+    <section aria-labelledby="titulo-licitaciones" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <div className="text-[12px] font-bold tracking-[1.5px] uppercase text-[#E30613] mb-2">Destacadas</div>
-          <h2 className="font-['Sora'] text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">Licitaciones disponibles</h2>
+          <h2 id="titulo-licitaciones" className="font-['Sora'] text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">Licitaciones disponibles</h2>
         </div>
 
         {/* Filtros */}
@@ -41,6 +41,7 @@ const LicitacionesDestacadas = () => {
             <button
               key={f}
               onClick={() => setFiltro(f)}
+              aria-label={`Filtrar por: ${f}`}
               className={`text-[13px] px-3 py-1.5 border rounded-full transition-colors cursor-pointer ${
                 filtro === f
                   ? 'border-[#0A3D91] text-[#0A3D91] bg-[#EBF1FB]'
@@ -55,7 +56,7 @@ const LicitacionesDestacadas = () => {
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {filtradas.map((l, i) => (
-            <article key={i} className="bg-[#F5F7FC] border border-[#0A3D91]/10 rounded-2xl p-6 flex flex-col gap-3 hover:shadow-[0_6px_24px_rgba(10,61,145,0.1)] hover:-translate-y-0.5 transition-all">
+            <article key={i} aria-label={`Licitación: ${l.title}`} className="bg-[#F5F7FC] border border-[#0A3D91]/10 rounded-2xl p-6 flex flex-col gap-3 hover:shadow-[0_6px_24px_rgba(10,61,145,0.1)] hover:-translate-y-0.5 transition-all">
               <div className="flex justify-between items-start gap-2">
                 <h3 className="text-[15px] font-semibold text-[#1F1D1A] leading-snug">{l.title}</h3>
                 <span className={`text-[11px] font-semibold px-3 py-1 rounded-full whitespace-nowrap flex-shrink-0 ${badgeStyle[l.estado]}`}>

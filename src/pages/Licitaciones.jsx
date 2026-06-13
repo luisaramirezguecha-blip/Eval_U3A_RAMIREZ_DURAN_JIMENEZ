@@ -92,6 +92,7 @@ export default function Licitaciones() {
               <div className="flex-[0_0_120px]">
                 <button
                   id="btnBuscar"
+                  aria-label="Buscar licitaciones"
                   className="w-full bg-[#1a3a5c] text-white border-none rounded-md py-[0.55rem] px-4 font-bold text-[0.95rem] cursor-pointer hover:bg-[#122a44] transition-colors"
                   onClick={iniciarBusqueda}
                 >
@@ -129,6 +130,7 @@ export default function Licitaciones() {
                   return (
                     <tr
                       key={i}
+                      aria-label={`Ver detalle de licitación ${nombreLicitacion}`}
                       className="hover:bg-slate-50 transition-colors cursor-pointer"
                       onClick={() => {
                         if (codExterno) {
@@ -163,6 +165,7 @@ export default function Licitaciones() {
             <nav className="flex items-center justify-center gap-4 mt-5 flex-wrap" aria-label="Paginación de la tabla de resultados">
               {mostrarAnterior && (
                 <button
+                  aria-label="Cargar resultados anteriores"
                   className="bg-white border-[1.5px] border-[#1a3a5c] text-[#1a3a5c] rounded-md px-[1.1rem] py-[0.45rem] font-semibold text-[0.9rem] cursor-pointer hover:bg-slate-50 transition-colors"
                   onClick={cargarAnterior}
                 >
@@ -171,6 +174,7 @@ export default function Licitaciones() {
               )}
               <span className="text-[#374151] text-[0.9rem] text-center" aria-live="polite">{infoPag}</span>
               <button
+                aria-label={btnSigText}
                 className="bg-white border-[1.5px] border-[#1a3a5c] text-[#1a3a5c] rounded-md px-[1.1rem] py-[0.45rem] font-semibold text-[0.9rem] cursor-pointer hover:bg-slate-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 onClick={cargarSiguiente}
                 disabled={loader}

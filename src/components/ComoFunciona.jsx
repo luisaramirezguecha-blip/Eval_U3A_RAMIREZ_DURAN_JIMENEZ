@@ -6,11 +6,11 @@ const steps = [
 
 const ComoFunciona = () => {
   return (
-    <section className="py-20">
+    <section aria-labelledby="titulo-como-funciona" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <div className="text-[12px] font-bold tracking-[1.5px] uppercase text-[#E30613] mb-2">Proceso</div>
-          <h2 className="font-['Sora'] text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">¿Cómo funciona? En 3 pasos</h2>
+          <h2 id="titulo-como-funciona" className="font-['Sora'] text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">¿Cómo funciona? En 3 pasos</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

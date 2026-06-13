@@ -53,7 +53,8 @@ const Proveedores = () => {
     setBuscado(false)
 
     try {
-      const url = `https://api.mercadopublico.cl/servicios/v1/Publico/Empresas/BuscarProveedor?rutempresaproveedor=${rut}&ticket=${TICKET}`
+      const rutLimpio = rut.replace(/\./g, '').replace(/-/g, '')
+      const url = `https://api.mercadopublico.cl/servicios/v1/Publico/Empresas/BuscarProveedor?rutempresaproveedor=${rutLimpio}&ticket=${TICKET}`
       const resp = await fetch(url)
 
       if (resp.status === 404) {

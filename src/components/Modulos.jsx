@@ -27,16 +27,16 @@ const modulos = [
 
 const Modulos = () => {
   return (
-    <section className="py-20">
+    <section section aria-labelledby="titulo-modulos" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <div className="text-[12px] font-bold tracking-[1.5px] uppercase text-[#E30613] mb-2">Plataforma</div>
-          <h2 className="font-['Sora'] text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">¿Qué puedes hacer aquí?</h2>
+          <h2 id="titulo-modulos" className="font-['Sora'] text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight">¿Qué puedes hacer aquí?</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {modulos.map((m, i) => (
-            <a key={i} href="#" className="bg-white border border-[#0A3D91]/10 rounded-2xl p-7 flex flex-col gap-3 no-underline text-[#1F1D1A] hover:border-[#0A3D91] hover:shadow-[0_4px_20px_rgba(10,61,145,0.1)] hover:-translate-y-0.5 transition-all">
+            <a key={i} href="#" aria-label={m.title} className="bg-white border border-[#0A3D91]/10 rounded-2xl p-7 flex flex-col gap-3 no-underline text-[#1F1D1A] hover:border-[#0A3D91] hover:shadow-[0_4px_20px_rgba(10,61,145,0.1)] hover:-translate-y-0.5 transition-all">
               <div className="w-11 h-11 bg-[#EBF1FB] rounded-xl flex items-center justify-center text-[#0A3D91]">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="w-5 h-5">
                   {m.icon}

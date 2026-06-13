@@ -2,7 +2,7 @@ import footerImg from '../assets/footer-img.png'
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1F1D1A] text-white/75 pt-12 pb-8">
+    <footer aria-label="Pie de página" className="bg-[#1F1D1A] text-white/75 pt-12 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
@@ -17,7 +17,7 @@ const Footer = () => {
           </div>
 
           {/* Plataforma */}
-          <div>
+          <nav aria-label="Plataforma">
             <h4 className="text-white text-[13px] font-semibold mb-3 tracking-wide">Plataforma</h4>
             <ul className="list-none space-y-1">
               {['Licitaciones', 'Ver detalles', 'Proveedores'].map(item => (
@@ -26,10 +26,10 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Ayuda */}
-          <div>
+          <nav aria-label="Ayuda">
             <h4 className="text-white text-[13px] font-semibold mb-3 tracking-wide">Ayuda</h4>
             <ul className="list-none space-y-1">
               {['Preguntas frecuentes', 'Contacto', 'Glosario'].map(item => (
@@ -38,10 +38,10 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Accesibilidad */}
-          <div>
+          <nav aria-label="Accesibilidad">
             <h4 className="text-white text-[13px] font-semibold mb-3 tracking-wide">Accesibilidad</h4>
             <ul className="list-none space-y-1">
               {['Declaración WCAG 2.1', 'Transparencia', 'Ley N° 20.285'].map(item => (
@@ -50,7 +50,7 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
         </div>
 
         {/* Footer bottom */}
