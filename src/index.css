@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-/* ==========================================================================
-   ESTRUCTURA BASE ORIGINAL
-   ========================================================================== */
+/*Estructura base original + sticky footer*/
+
+/*ESTRUCTURA BASE ORIGINAL*/
 #root {
   display: flex;
   flex-direction: column;
