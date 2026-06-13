@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+
+/*Estructura base original + sticky footer*/
+
 #root {
   display: flex;
   flex-direction: column;
@@ -12,4 +15,6 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+
 
