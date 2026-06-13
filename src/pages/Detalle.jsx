@@ -5,6 +5,14 @@ import Footer from '../components/Footer'
 
 const TICKET = "AC3A098B-4CD0-41AF-81A5-41284248419B"
 
+const limpiarTexto = (texto) => {
+  if (!texto) return ''
+  return texto
+    .toLowerCase()
+    .replace(/(?:^|\s|—|-)\S/g, (c) => c.toUpperCase())
+    .trim()
+}
+
 const Detalle = () => {
   const { codigo } = useParams()
   const codigoDecodificado = decodeURIComponent(codigo)

@@ -17,9 +17,7 @@ body {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* ==========================================================================
-   EL MOTOR QUE HACE FUNCIONAR TU NAVBAR (Fuerza el Alto Contraste Global)
-   ========================================================================== */
+/*EL MOTOR QUE HACE FUNCIONAR TU NAVBAR (Fuerza el Alto Contraste Global)*/
 
 /* 1. Forzar fondo oscuro profundo en el body y cualquier sección, tarjeta o contenedor secundario */
 .alto-contraste,
@@ -69,4 +67,51 @@ body {
 .alto-contraste button:hover {
   background-color: #ffff00 !important;
   color: #000000 !important;
+}
+
+/*ALTO CONTRASTE — PARCHE TARJETAS Y TEXTOS SECUNDARIOS*/
+
+/* Textos de títulos dentro de tarjetas (hardcoded con Tailwind) */
+.alto-contraste [class*="text-[#1F1D1A]"],
+.alto-contraste [class*="text-[#1f1d1a]"] {
+  color: #ffff00 !important;
+}
+
+/* Textos secundarios/subtítulos (los grises tipo organismo, plazo, etc.) */
+.alto-contraste [class*="text-[#4A4845]"],
+.alto-contraste [class*="text-[#4a4845]"] {
+  color: #ffffff !important;
+}
+
+/* Fondo de tarjetas del hero y licitaciones */
+.alto-contraste [class*="bg-[#F5F7FC]"],
+.alto-contraste [class*="bg-[#EBF1FB]"],
+.alto-contraste [class*="bg-white"],
+.alto-contraste .bg-white {
+  background-color: #1e1e1e !important;
+}
+
+/* Badges de estado (Abierta, Por abrir, Cerrada) */
+.alto-contraste [class*="bg-[#E7F6ED]"],
+.alto-contraste [class*="bg-[#FFF4E5]"],
+.alto-contraste [class*="bg-[#F3F3F3]"] {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  border: 1px solid #ffff00 !important;
+}
+
+/* Bordes de tarjetas */
+.alto-contraste [class*="border-[#0A3D91]"],
+.alto-contraste article {
+  border-color: #ffff00 !important;
+}
+
+/* Descripción de pasos en ComoFunciona */
+.alto-contraste article p {
+  color: #ffffff !important;
+}
+
+/* Montos en azul (text-[#0A3D91]) → amarillo */
+.alto-contraste [class*="text-[#0A3D91]"] {
+  color: #ffff00 !important;
 }
