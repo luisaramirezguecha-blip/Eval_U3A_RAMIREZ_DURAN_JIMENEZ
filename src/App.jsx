@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/home'
 import Licitaciones from './pages/Licitaciones'
 import Detalle from './pages/Detalle'
-import Proveedores from './pages/proveedores'
+import Proveedores from './pages/Proveedores'
 
 function App() {
   return (
@@ -18,5 +18,3 @@ function App() {
 }
 
 export default App
-
-//Agregue: npm install react-router-dom <- es un enrutador explicito, manda a react a la url exacta... Sin esto react se pierde en el camino xd

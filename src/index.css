@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* ==========================================================================
+   ESTRUCTURA BASE ORIGINAL
+   ========================================================================== */
 #root {
   display: flex;
   flex-direction: column;
@@ -7,9 +10,63 @@
 }
 
 body {
-  font-family: 'DM Sans', sans-serif; /*fuente personalizada*/
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #1f1d1a;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+/* ==========================================================================
+   EL MOTOR QUE HACE FUNCIONAR TU NAVBAR (Fuerza el Alto Contraste Global)
+   ========================================================================== */
+
+/* 1. Forzar fondo oscuro profundo en el body y cualquier sección, tarjeta o contenedor secundario */
+.alto-contraste,
+.alto-contraste body,
+.alto-contraste #root,
+.alto-contraste header,
+.alto-contraste main,
+.alto-contraste section,
+.alto-contraste div,
+.alto-contraste footer {
+  background-color: #121212 !important;
+  border-color: #ffff00 !important;
+}
+
+/* 2. Forzar texto blanco puro en párrafos, etiquetas, celdas y listas */
+.alto-contraste p,
+.alto-contraste span,
+.alto-contraste li,
+.alto-contraste td,
+.alto-contraste th,
+.alto-contraste label,
+.alto-contraste input {
+  color: #ffffff !important;
+}
+
+/* 3. Forzar los links del menú, títulos e iconos importantes a amarillo de alta visibilidad */
+.alto-contraste h1,
+.alto-contraste h2,
+.alto-contraste h3,
+.alto-contraste h4,
+.alto-contraste a,
+.alto-contraste strong {
+  color: #ffff00 !important;
+}
+
+/* 4. Arreglo para botones (incluyendo tu suscripción y ClaveÚnica si corresponde) */
+.alto-contraste button,
+.alto-contraste .inline-flex,
+.alto-contraste [role="button"] {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  border: 2px solid #ffff00 !important;
+}
+
+/* 5. Asegurar que al pasar el mouse por el menú se entienda la selección */
+.alto-contraste a:hover,
+.alto-contraste button:hover {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+}
