@@ -38,7 +38,7 @@ export function getFechaHoy() {
   return `${dia}/${mes}/${anio}`;
 }
 
-// ─── Hook principal ─────────────────────────────────────────────────────────
+// Hook principal 
 
 export function useLicitacionesPorFechaYEstado() {
   const [fecha, setFecha]         = useState(getFechaHoy);
@@ -60,7 +60,7 @@ export function useLicitacionesPorFechaYEstado() {
   const estadoRef        = useRef("activas");
   const isLoading        = useRef(false);
 
-  // ── Mostrar lote desde caché ─────────────────────────────────────────────
+  // Mostrar lote desde caché 
 
   const mostrarLoteEnTabla = useCallback(() => {
     const diaCache = historialDias.current[indiceDiaActual.current];
@@ -162,7 +162,7 @@ export function useLicitacionesPorFechaYEstado() {
     [mostrarLoteEnTabla]
   );
 
-  // ── Acciones públicas ────────────────────────────────────────────────────
+  //Acciones públicas
 
   const iniciarBusqueda = useCallback(() => {
     setError("");
