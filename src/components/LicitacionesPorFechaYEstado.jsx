@@ -87,7 +87,7 @@ export function useLicitacionesPorFechaYEstado() {
     setMostrarAnterior(!esPrimero);
   }, []);
 
-  // ── Llamada a la API ─────────────────────────────────────────────────────
+  // Llamada a la API
 
   const buscarPorFecha = useCallback(
     async (fechaStr, esNuevaBusqueda) => {
